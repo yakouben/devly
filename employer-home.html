@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alganai - Employer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-[#EAF2FF] to-[#F8FAFF] min-h-screen font-sans">
+    <div class="max-w-md mx-auto min-h-screen flex flex-col">
+        <!-- Logo (Added) -->
+        <div class="absolute top-0 right-0 p-6">
+            <img src="src/logo.png" alt="Alganai" class="h-8 md:h-10">
+        </div>
+
+        <!-- Header -->
+        <header class="p-8">
+            <div class="flex justify-between items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-3xl font-bold text-[#112952] mb-1">Welcome back</h1>
+                    <p class="text-[#112952]/60 text-sm">Your AI-powered hiring assistant</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 space-y-6">
+            <!-- Post Job Card -->
+            <div class="bg-white rounded-3xl p-6 shadow-lg shadow-[#112952]/5 group hover:shadow-xl transition-shadow">
+                <button class="w-full flex items-center justify-between text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#112952] rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-[#112952]">Post a Job Offer</h3>
+                            <p class="text-sm text-gray-500">Create a new job listing</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right text-[#112952] group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+            <!-- Upload Job Description -->
+            <div class="bg-[#112952] rounded-3xl p-8 text-white relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml,...')] opacity-5"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <lottie-player
+                            src="https://assets5.lottiefiles.com/packages/lf20_xyadoh9h.json"
+                            background="transparent"
+                            speed="1"
+                            style="width: 60px; height: 60px;"
+                            loop
+                            autoplay
+                        ></lottie-player>
+                        <div>
+                            <h3 class="font-semibold mb-1">Quick Candidate Match</h3>
+                            <p class="text-sm text-white/70">Upload a job description to find matches</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-dashed border-white/30 rounded-2xl p-6 group-hover:border-white/50 transition-all cursor-pointer" id="uploadZone">
+                        <div class="flex flex-col items-center">
+                            <i class="far fa-file-alt text-3xl mb-3"></i>
+                            <p class="text-sm text-center">Drop your job description here<br>or click to upload (PDF/DOCX)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Candidate Suggestions -->
+            <div class="space-y-4">
+                <h3 class="font-semibold text-[#112952] px-2">Top Matches</h3>
+                
+                <!-- Candidate Card 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#EAF2FF] rounded-xl flex items-center justify-center text-[#112952]">
+                                <i class="fas fa-user-circle text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-[#112952]">Senior UX Designer</h4>
+                                <p class="text-sm text-gray-500">5 years experience</p>
+                            </div>
+                        </div>
+                        <span class="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full font-medium">
+                            94% Match
+                        </span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#EAF2FF] text-[#112952] text-xs px-3 py-1 rounded-full">Figma</span>
+                        <span class="bg-[#EAF2FF] text-[#112952] text-xs px-3 py-1 rounded-full">User Research</span>
+                        <span class="bg-[#EAF2FF] text-[#112952] text-xs px-3 py-1 rounded-full">Design Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Chat Input -->
+        <div class="fixed bottom-0 inset-x-0 bg-white/80 backdrop-blur-lg border-t border-gray-100 p-4">
+            <div class="max-w-md mx-auto relative">
+                <input 
+                    type="text" 
+                    placeholder="Ask anything about hiring (e.g., 'Show me top developers')" 
+                    class="w-full bg-white pl-4 pr-12 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#112952]"
+                >
+                <button class="absolute right-3 top-1/2 -translate-y-1/2 text-[#112952] hover:bg-[#EAF2FF] p-2 rounded-full transition-colors">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Spacer -->
+        <div class="h-24"></div>
+    </div>
+
+    <script>
+        // File upload handling
+        const uploadZone = document.getElementById('uploadZone');
+        uploadZone.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    console.log('File selected:', file.name);
+                    // Add upload handling here
+                }
+            };
+            input.click();
+        });
+    </script>
+</body>
+</html> 

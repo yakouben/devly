@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alganai - Job Seeker Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-[#EAF2FF] to-[#F8FAFF] min-h-screen font-sans">
+    <!-- Main Content -->
+    <div class="max-w-md mx-auto min-h-screen flex flex-col">
+        <!-- Logo (Added) -->
+        <div class="absolute top-0 right-0 p-6">
+            <img src="src/logo.png" alt="Alganai" class="h-8 md:h-10">
+        </div>
+
+        <!-- Header -->
+        <header class="p-8">
+            <div class="flex justify-between items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-3xl font-bold text-[#112952] mb-1">Hi Sarah</h1>
+                    <p class="text-[#112952]/60 text-sm">Welcome back!</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+                        <button class="text-[#112952] p-2 hover:bg-white/50 rounded-full transition-all">
+                            <i class="far fa-bell"></i>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-[#112952] to-[#94BFFF] rounded-full blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                        <img src="src/profile.jpg" alt="Profile" class="w-12 h-12 rounded-full object-cover relative ring-2 ring-white">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Card -->
+        <div class="flex-1 flex items-center justify-center p-6">
+            <div class="w-full bg-[#112952] rounded-3xl p-8 text-white relative overflow-hidden shadow-[0_20px_50px_rgba(17,41,82,0.2)] backdrop-blur-sm">
+                <!-- Animated Background -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml,...')] opacity-5 animate-slide"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 space-y-8">
+                    <!-- AI Assistant Section -->
+                    <div class="flex flex-col items-center">
+                        <lottie-player
+                            src="https://assets5.lottiefiles.com/packages/lf20_xyadoh9h.json"
+                            background="transparent"
+                            speed="1"
+                            style="width: 120px; height: 120px;"
+                            loop
+                            autoplay
+                        ></lottie-player>
+                        <h2 class="text-2xl mt-4">
+                            <span class="font-normal">Chat with</span>
+                            <span class="font-bold">Alganai</span>
+                        </h2>
+                        <p class="text-white/70 text-sm mt-2">Your personal AI career assistant</p>
+                    </div>
+
+                    <!-- CV Upload Zone -->
+                    <div class="group cursor-pointer" id="uploadZone">
+                        <div class="border-2 border-dashed border-white/30 rounded-2xl p-6 group-hover:border-white/50 transition-all bg-white/5">
+                            <div class="flex flex-col items-center">
+                                <i class="far fa-file-alt text-3xl mb-3 group-hover:scale-110 transition-transform"></i>
+                                <p class="font-medium text-sm mb-1">Drop your CV here or click to upload</p>
+                                <p class="text-xs text-white/50">PDF, DOC, DOCX (Max 5MB)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="w-full bg-white text-[#112952] py-4 rounded-xl font-medium group relative overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            Start Chat
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-white to-[#EAF2FF] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </button>
+
+                    <!-- Typing Indicator -->
+                    <div class="absolute bottom-4 right-4 flex gap-1">
+                        <div class="w-2 h-2 bg-white/30 rounded-full animate-bounce"></div>
+                        <div class="w-2 h-2 bg-white/30 rounded-full animate-bounce delay-100"></div>
+                        <div class="w-2 h-2 bg-white/30 rounded-full animate-bounce delay-200"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="fixed bottom-0 inset-x-0 bg-white/80 backdrop-blur-lg border-t border-gray-100">
+            <div class="max-w-md mx-auto px-6 py-3 flex justify-between">
+                <a href="#" class="flex flex-col items-center gap-1 relative group">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#112952] text-white">
+                        <i class="fas fa-home text-sm"></i>
+                    </div>
+                    <span class="text-xs font-medium text-[#112952]">Home</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-1 group">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-xl group-hover:bg-[#EAF2FF] text-gray-400 group-hover:text-[#112952] transition-all">
+                        <i class="far fa-comments text-sm"></i>
+                    </div>
+                    <span class="text-xs text-gray-400">Chat</span>
+                </a>
+                <!-- Similar structure for other nav items -->
+            </div>
+        </nav>
+
+        <!-- Bottom Spacer -->
+        <div class="h-24"></div>
+    </div>
+
+    <style>
+        @keyframes slide {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+        .animate-slide {
+            animation: slide 20s linear infinite;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out;
+        }
+    </style>
+
+    <script>
+        // Add file upload functionality
+        const uploadZone = document.getElementById('uploadZone');
+        uploadZone.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    // Handle file upload
+                    console.log('File selected:', file.name);
+                }
+            };
+            input.click();
+        });
+    </script>
+</body>
+</html> 
